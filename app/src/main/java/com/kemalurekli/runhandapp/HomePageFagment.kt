@@ -36,6 +36,7 @@ class HomePageFagment : Fragment() {
         binding.tvUpdated.visibility = View.INVISIBLE
         binding.tvCheckingData.visibility = View.INVISIBLE
         binding.tvTime.visibility = View.INVISIBLE
+        binding.buttonStop.visibility = View.INVISIBLE
 
 
         binding.buttonStart.setOnClickListener {
@@ -49,6 +50,8 @@ class HomePageFagment : Fragment() {
                     binding.tvTime.text = "Time: $number"
                     binding.tvTime.visibility = View.VISIBLE
                     binding.tvUpdated.visibility = View.INVISIBLE
+                    binding.buttonStart.visibility = View.INVISIBLE
+                    binding.buttonStop.visibility = View.VISIBLE
 
                     if(number%5==0){
                         binding.tvCheckingData.visibility = View.VISIBLE
@@ -73,6 +76,8 @@ class HomePageFagment : Fragment() {
             handler.removeCallbacks(runnable)
             number = 0
             binding.tvTime.text = "Time: 0"
+            binding.buttonStart.visibility = View.VISIBLE
+            binding.buttonStop.visibility = View.INVISIBLE
 
         }
 
